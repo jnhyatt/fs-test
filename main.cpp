@@ -1,11 +1,20 @@
 ﻿#include <cassert>
+
+#define USE_GHC_FS
+#ifdef USE_GHC_FS
+#include <ghc/filesystem.hpp>
+namespace fs = ghc::filesystem;
+#else
 #include <filesystem>
+namespace fs = std::filesystem;
+#endif
+
 #include <fstream>
 #include <iostream>
 #include <sstream>
 
 int main() {
-    std::filesystem::path path;
+    fs::path path;
     std::istringstream ss("file text.txt");
     std::string directive;
 

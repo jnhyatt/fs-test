@@ -1,6 +1,5 @@
 ﻿#include <cassert>
 
-#define USE_GHC_FS
 #ifdef USE_GHC_FS
 #include <ghc/filesystem.hpp>
 namespace fs = ghc::filesystem;
